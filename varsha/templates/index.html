@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projectile Simulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-panel">
+      <h1>3 D Projectile Simulator</h1>
+      <h2>Choose x,y co-ordinates from mini map</h2>
+      <div class="board-wrapper">
+        <div class="y-labels">
+          {% for i in range(-15, 16) %}
+            <div>{{ i }}</div>
+          {% endfor %}
+        </div>
+        
+        <div id="chessboard"></div>
+      </div>
+      <div class="x-labels">
+        {% for i in range(-15, 16) %}
+          <div>{{ i }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class ="assumptions">
+        <h2> Assumptions </h2>
+        <ul>
+          <li><strong>g</strong>=9.8m/s^2</li>
+          <li><strong>Height of room = </strong>10m</li>
+          <li><strong>Mass of nitrogen ball</strong> = 1.5Kg</li>
+          <li><strong>Stiffness constant k</strong> = 1000 N/m</li>
+          <li><strong>Room length width</strong> = 30 X 30 m</li>
+        </ul>
+      </div>
+      <div class="output-panel">
+       
+        <h2>Output Parameters</h2>
+        <ul>
+          <li><strong>X input:</strong> <span id="x_input"></span> m</li>
+          <li><strong>Y input:</strong> <span id="y_input"></span> m</li>
+          <li><strong>Initial Velocity:</strong> <span id="v0"></span> m/s</li>
+          <li><strong>Launch Angle (θ):</strong> <span id="theta"></span>°</li>
+          <li><strong>Azimuthal Angle (φ):</strong> <span id="phi"></span>°</li>
+          <li><strong>Time of Flight:</strong> <span id="t_final"></span> s</li>
+          <li><strong>Displacement of Spring:</strong> <span id="disp"></span>m</li>
+        </ul>
+      </div>
+      </div>
+      <div>
+      <div id="plot3d" class="plot large"></div>
+      <div id="plot2d" class="plot large"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
