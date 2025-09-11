@@ -10,7 +10,7 @@ for (let y = -15; y < 15; y++) {
 }
 
 function handleClick(x, y) {
-  fetch('/api/simulate', {
+  fetch('/simulate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ x, y })
