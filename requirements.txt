@@ -7,3 +7,4 @@ Werkzeug
 itsdangerous
 blinker
 importlib-metadata
+gunicorn
