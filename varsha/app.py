@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from simulation import simulate_projectile
+from .simulation import simulate_projectile
 
 app = Flask(__name__)
 
